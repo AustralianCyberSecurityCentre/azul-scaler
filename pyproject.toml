@@ -1,0 +1,60 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools >= 64", "setuptools_scm >= 8"]
+
+[tool.black]
+line-length = 119
+target-version = ["py310"]
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.tox
+    | \.venv
+    | .*\.egg-info
+    | __pycache__
+    | build
+    | dist
+    | azul_scaler/grpc
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+# defaults + extra row
+skip = [
+  '.bzr',
+  '.direnv',
+  '.eggs',
+  '.git',
+  '.hg',
+  '.mypy_cache',
+  '.nox',
+  '.pants.d',
+  '.svn',
+  '.tox',
+  '.venv',
+  '__pypackages__',
+  '_build',
+  'buck-out',
+  'build',
+  'dist',
+  'node_modules',
+  'venv',
+  "azul_scaler/grpc",
+]
+
+[tool.cruft]
+skip = ["debian.txt", "README.md", "azul_scaler", "tests"]
+
+[tool.setuptools_scm]
+version_scheme = "only-version"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+log_cli = true
+log_cli_level = "INFO"
