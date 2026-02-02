@@ -1,8 +1,0 @@
-httpx
-pydantic>2
-pydantic-settings
-
-grpcio>=1.67.1
-grpcio-channelz
-protobuf
-redis[hiredis]
