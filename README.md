@@ -70,7 +70,7 @@ python -m grpc_tools.protoc -I protos --python_out=azul_scaler/grpc --pyi_out=az
 
 ## Usage
 
-By default, launching the default entrypoint (defined in `setup.py`) will start up a unencrypted
+By default, launching the default entrypoint (defined in `pyproject.yaml`) will start up a unencrypted
 gRPC listener on port :8090. This can be configured via environmental variables listed in `settings.py`.
 
 This can be used with KEDA directly - create a service for this scaler, and use KEDA's external
