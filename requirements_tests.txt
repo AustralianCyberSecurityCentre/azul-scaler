@@ -1,4 +1,0 @@
-pytest
-pytest-httpx
-pytest-asyncio
-tox
