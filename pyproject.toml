@@ -78,7 +78,9 @@ dev = [
     "pytest>=9.0.2",
     "pytest-asyncio",
     "pytest-httpx>=0.36.0",
+    "ruff>=0.15.8",
     "tox>=4.34.1",
+    "ty>=0.0.27",
 ]
 
 [tool.pytest.ini_options]
