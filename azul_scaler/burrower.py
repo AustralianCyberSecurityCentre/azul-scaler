@@ -77,7 +77,7 @@ class Burrower:
 
         # Discriminate between an error object (which is missing fields) and the actual
         # type we are looking for
-        adapter = TypeAdapter(Annotated[Union[BurrowErrorResponse, format], Field(..., discriminator="error")])
+        adapter = TypeAdapter(Annotated[Union[BurrowErrorResponse, format], Field(..., discriminator="error")])  # ty: ignore[invalid-type-form] ty thinks this type form is invalid, but if it works it works?
 
         parsed_model = adapter.validate_json(result.content)
 
