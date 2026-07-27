@@ -14,19 +14,19 @@ class Scaler[T]:
         """Async startup for the scaler."""
         pass
 
-    async def parse_scaler_metadata(self, _scaled_object: ScaledObjectRef) -> T:
+    async def parse_scaler_metadata(self, scaled_object: ScaledObjectRef) -> T:
         """Parses scaler metadata into an internal object."""
         raise NotImplementedError("Not implemented!")
 
-    async def is_active(self, _metadata: T) -> bool:
+    async def is_active(self, metadata: T) -> bool:
         """Determines if a plugin is active (i.e has files waiting)."""
         raise NotImplementedError("Not implemented!")
 
-    async def get_metric_spec(self, _metadata: T) -> list[MetricSpec]:
+    async def get_metric_spec(self, metadata: T) -> list[MetricSpec]:
         """Determines what metrics can be determined from this scaler."""
         raise NotImplementedError("Not implemented!")
 
-    async def get_metric(self, _metadata: T, metric_name: str) -> int:
+    async def get_metric(self, metadata: T, metric_name: str) -> int:
         """Determines the value of a metric. May throw exceptions if needed."""
         raise NotImplementedError("Not implemented!")
 
